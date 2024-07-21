@@ -1,5 +1,7 @@
-import TopNav from "../../components/TopNav/TopNav";
-
-export default function Home() {
-  <TopNav />;
+export default function Home(params) {
+  return (
+    <>
+      <h1>Home</h1>
+    </>
+  );
 }
