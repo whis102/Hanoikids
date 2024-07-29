@@ -1,20 +1,33 @@
-.root {
+.header {
   flex-grow: 1;
+
+  div {
+    background-color: white;
+  }
 }
 
 .logo {
-  margin-right: 16px; /* theme.spacing(2) tương đương với 16px */
+  margin-right: 16px;
   display: flex;
   align-items: center;
+
+  img {
+    width: 200px;
+  }
 }
 
-.navLinks {
+.nav-links {
   flex-grow: 1;
   display: flex;
   justify-content: space-around;
+
+  .button {
+    color: black;
+    text-transform: none;
+  }
 }
 
 .button {
-  color: white;
+  color: black;
   text-transform: none;
 }

@@ -1,25 +1,26 @@
 import Logo from "../../assets/logo.png";
-import { AppBar, ToolBar, Button } from "@mui/material";
+import { AppBar, Toolbar, Button } from "@mui/material";
+import "./Header.scss";
 
 export default function Header() {
   return (
-    <div className="root">
+    <div className="header">
       <AppBar position="static">
-        <ToolBar>
+        <Toolbar>
           <div className="logo">
             <img src={Logo} alt="Logo" style={{ height: 40 }} />
           </div>
 
-          <div className="navLinks">
+          <div className="nav-links">
             <Button className="button">Tours</Button>
-            <Button className="button">Tuyển dụng</Button>
-            <Button className="button">Về chúng tôi</Button>
-            <Button className="button">Liên hệ</Button>
+            <Button className="button">About Us</Button>
+            <Button className="button">Contact</Button>
             <Button className="button">FAQs</Button>
             <Button className="button">Blogs</Button>
           </div>
-          <Button color="inherit">Đặt tour</Button>
-        </ToolBar>
+
+          <Button variant="contained">Book Tour</Button>
+        </Toolbar>
       </AppBar>
     </div>
   );
