@@ -1,7 +1,11 @@
+import NavBar from "../../components/NavBar/NavBar";
+import Header from "../../components/Header/Header";
+
 export default function About() {
   return (
     <>
-      <h1>About</h1>
+      <NavBar></NavBar>
+      <Header></Header>
     </>
   );
 }

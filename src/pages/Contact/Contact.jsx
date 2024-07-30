@@ -1,7 +1,11 @@
-export default function Contact(params) {
+import NavBar from "../../components/NavBar/NavBar";
+import Header from "../../components/Header/Header";
+
+export default function Contact() {
   return (
     <>
-      <h1>Contact</h1>
+      <NavBar></NavBar>
+      <Header></Header>
     </>
   );
 }
