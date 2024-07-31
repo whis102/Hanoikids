@@ -11,7 +11,7 @@ export default function Header() {
       <AppBar position="static">
         <Toolbar>
           <div className="logo">
-            <img src={Logo} alt="Logo" />
+            <img src={Logo} alt="Logo" onClick={() => navigate("/")} />
           </div>
 
           <div className="nav-links">
