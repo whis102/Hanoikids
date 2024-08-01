@@ -18,10 +18,10 @@ export default function Header() {
             <Button className="button" onClick={() => navigate("/tours")}>
               Tours
             </Button>
-            <Button className="button" onClick={() => navigate("/about")}>
+            <Button className="button" onClick={() => navigate("/about-us")}>
               About Us
             </Button>
-            <Button className="button" onClick={() => navigate("/contact")}>
+            <Button className="button" onClick={() => navigate("/contact-us")}>
               Contact Us
             </Button>
             <Button className="button" onClick={() => navigate("/faqs")}>
@@ -32,7 +32,7 @@ export default function Header() {
             </Button>
           </div>
 
-          <Button variant="contained" onClick={() => navigate("/book")}>
+          <Button variant="contained" onClick={() => navigate("/book-tour")}>
             Book Tour
           </Button>
         </Toolbar>
