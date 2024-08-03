@@ -1,13 +1,13 @@
 import "./Title.scss";
 import { Typography } from "@mui/material";
 
-export default function Title({ children }) {
+export default function Title({ children, heading }) {
   return (
     <Typography
-      variant="h4"
+      variant={heading}
       gutterBottom
-      textAlign={"center"}
       className="title"
+      textAlign={"center"}
     >
       {children}
     </Typography>

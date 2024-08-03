@@ -6,16 +6,13 @@ import {
   AccordionDetails,
 } from "@mui/material";
 
-import { useNavigate } from "react-router-dom";
 import Title from "../../components/Title/Title";
 import Structure from "../../components/Structure/Structure";
 
 export default function FAQs() {
-  const navigate = useNavigate();
-
   return (
     <Structure>
-      <Title>Frequently Asked Questions</Title>
+      <Title heading={"h4"}>Frequently Asked Questions</Title>
 
       <Typography variant="subtitle1" gutterBottom>
         This section provides answers to common questions from Tourists and
