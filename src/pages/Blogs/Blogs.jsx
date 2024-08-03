@@ -1,11 +1,9 @@
-import Header from "../../components/Header/Header";
-import NavBar from "../../components/NavBar/NavBar";
+import Structure from "../../components/Structure/Structure";
 
 export default function Blogs() {
   return (
-    <>
-      <NavBar />
-      <Header />
-    </>
+    <Structure>
+      <h1>Blogs</h1>
+    </Structure>
   );
 }

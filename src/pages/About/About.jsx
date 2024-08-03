@@ -1,11 +1,9 @@
-import NavBar from "../../components/NavBar/NavBar";
-import Header from "../../components/Header/Header";
+import Structure from "../../components/Structure/Structure";
 
 export default function About() {
   return (
-    <>
-      <NavBar />
-      <Header />
-    </>
+    <Structure>
+      <h1>About</h1>
+    </Structure>
   );
 }

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Header from "../../components/Header/Header";
-import NavBar from "../../components/NavBar/NavBar";
+
+import Structure from "../../components/Structure/Structure";
 
 export default function BookTour() {
   const step = ["Booking Details", "Personal details", "Checkout"];
@@ -9,9 +9,8 @@ export default function BookTour() {
   const [completed, setCompleted] = useState({});
 
   return (
-    <>
-      <NavBar></NavBar>
-      <Header></Header>
-    </>
+    <Structure>
+      <h1>Booktour</h1>
+    </Structure>
   );
 }

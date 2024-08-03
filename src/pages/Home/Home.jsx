@@ -1,4 +1,4 @@
-import Structure from "../../components/Footer/Structure";
+import Structure from "../../components/Structure/Structure";
 
 export default function Home() {
   return (
