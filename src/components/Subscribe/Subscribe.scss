@@ -1,0 +1,15 @@
+.subscribe {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid white;
+
+  .sub-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .footer-links svg {
+      color: white;
+    }
+  }
+}

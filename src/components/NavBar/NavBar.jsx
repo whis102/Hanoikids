@@ -42,7 +42,7 @@ export default function NavBar() {
           <FacebookIcon fontSize={"small"} />
         </Link>
         <Link
-          href="https://github.com/whis102/SkyEdge"
+          href="https://github.com/whis102"
           underline="none"
           color={"white"}
           target="_blank"
