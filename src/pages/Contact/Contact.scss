@@ -1,0 +1,11 @@
+@import "../../styles.scss";
+
+.contact-box > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h5 {
+    color: $primary-color;
+  }
+}
