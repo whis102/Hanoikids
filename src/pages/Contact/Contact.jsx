@@ -47,6 +47,7 @@ export default function Contact() {
               Email: leaderboard.hnks@gmail.com
             </Typography>
           </Grid>
+
           <Grid item xs={4}>
             <Card>
               <CardMedia
@@ -84,8 +85,10 @@ export default function Contact() {
             </Card>
           </Grid>
         </Grid>
+      </Box>
 
-        {/* Box 2 */}
+      {/* Box 2 */}
+      <Box className="contact-box">
         <Typography variant="body1" gutterBottom>
           About Tours:{" "}
           <Typography variant="body1" component="span">
