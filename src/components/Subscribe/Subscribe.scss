@@ -1,5 +1,6 @@
+@import "../../styles.scss";
+
 .subscribe {
-  margin-top: 1rem;
   padding-top: 1rem;
   border-top: 1px solid white;
 
@@ -8,8 +9,36 @@
     justify-content: space-between;
     align-items: center;
 
-    .footer-links svg {
-      color: white;
+    .sub-item {
+      display: flex;
+      justify-content: center;
+
+      svg {
+        color: white;
+        font-size: 30px;
+        padding: 6px;
+        border: 1px solid white;
+        border-radius: 50%;
+
+        &:hover {
+          background-color: white;
+          color: $primary-color;
+        }
+      }
+
+      .input-box > div {
+        border-radius: 10px 0 0 10px;
+
+        input {
+          width: 250px;
+          height: 10px;
+        }
+      }
+
+      .sub-btn {
+        border-radius: 0 10px 10px 0; // top-left, top-right, bottom-right, bottom-left
+        box-shadow: none;
+      }
     }
   }
 }

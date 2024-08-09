@@ -1,5 +1,13 @@
 import "./Footer.scss";
-import { Box, Card, CardMedia, Grid, Paper, Typography } from "@mui/material";
+import {
+  Box,
+  Card,
+  CardMedia,
+  Container,
+  Grid,
+  Paper,
+  Typography,
+} from "@mui/material";
 
 import Logo from "../../assets/logo.png";
 import PayPal from "../../assets/paypal-logo.webp";
@@ -11,35 +19,37 @@ import Subscribe from "../Subscribe/Subscribe";
 export default function Footer() {
   return (
     <Box component={"footer"}>
-      <Grid container spacing={3}>
-        <Grid item xs={4}>
-          <Card>
-            <CardMedia component={"img"} image={Logo} alt="Logo" />
-          </Card>
-        </Grid>
-        <Grid item xs={4}>
-          <Paper className="footer-box" sx={{ padding: 2 }}>
-            <Typography variant="h5" gutterBottom className="footer-title">
-              Your Contribution
-            </Typography>
+      <Container>
+        <Grid container spacing={3}>
+          <Grid item xs={4}>
             <Card>
-              <CardMedia component={"img"} image={PayPal} alt="Logo" />
+              <CardMedia component={"img"} image={Logo} alt="Logo" />
             </Card>
-          </Paper>
+          </Grid>
+          <Grid item xs={4}>
+            <Paper className="footer-box" sx={{ padding: 2 }}>
+              <Typography variant="h5" gutterBottom className="footer-title">
+                Your Contribution
+              </Typography>
+              <Card>
+                <CardMedia component={"img"} image={PayPal} alt="Logo" />
+              </Card>
+            </Paper>
+          </Grid>
+          <Grid item xs={4}>
+            <Paper className="footer-box" sx={{ padding: 2 }}>
+              <Typography variant="h5" gutterBottom className="footer-title">
+                Review us
+              </Typography>
+              <Card>
+                <CardMedia component={"img"} image={TripAd} alt="Logo" />
+              </Card>
+            </Paper>
+          </Grid>
         </Grid>
-        <Grid item xs={4}>
-          <Paper className="footer-box" sx={{ padding: 2 }}>
-            <Typography variant="h5" gutterBottom className="footer-title">
-              Review us
-            </Typography>
-            <Card>
-              <CardMedia component={"img"} image={TripAd} alt="Logo" />
-            </Card>
-          </Paper>
-        </Grid>
-      </Grid>
-      <Subscribe />
-      <Copyright />
+        <Subscribe />
+        <Copyright />
+      </Container>
     </Box>
   );
 }

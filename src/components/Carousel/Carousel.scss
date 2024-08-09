@@ -1,11 +1,13 @@
+@import "../../styles.scss";
+
 .carousel-container {
-  height: auto;
+  height: 800px;
   position: relative;
 
   .carousel-slide {
     img {
       width: 100%;
-      height: 700px;
+      height: 800px;
       object-fit: cover;
     }
   }
@@ -29,12 +31,19 @@
 
   .slick-prev,
   .slick-next {
-    z-index: 1;
     position: absolute;
-    top: 50%; // Vertically center the arrows
-    transform: translateY(-50%);
-    font-size: 40px;
-    color: #fff;
+    top: 50%;
+    width: 48px;
+    z-index: 1;
+
+    &::before {
+      font-size: 40px;
+      color: #fff;
+    }
+
+    &:hover::before {
+      color: $primary-color;
+    }
   }
 
   .slick-prev {

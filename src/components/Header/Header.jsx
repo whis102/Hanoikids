@@ -30,7 +30,7 @@ export default function Header() {
           </div>
 
           <Button variant="contained" onClick={() => navigate("/book-tour")}>
-            Book Tour
+            Book Tours
           </Button>
         </Toolbar>
       </AppBar>

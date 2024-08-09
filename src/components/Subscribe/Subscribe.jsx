@@ -5,9 +5,9 @@ import { Facebook, GitHub, LinkedIn, YouTube } from "@mui/icons-material";
 export default function Subscribe() {
   return (
     <Box component={"div"} className="subscribe">
-      <Grid container spacing={3} className="sub-box">
-        <Grid item xs={6} className="sub-item">
-          <Box className="footer-links">
+      <Grid container spacing={3}>
+        <Grid item xs={12} className="sub-box">
+          <Box className="sub-item">
             <IconButton
               href="https://www.facebook.com/oc.voi.voii/"
               target="_blank"
@@ -37,11 +37,17 @@ export default function Subscribe() {
               <YouTube />
             </IconButton>
           </Box>
-        </Grid>
 
-        <Grid item xs={6}>
-          <TextField variant="outlined" placeholder="Email address"></TextField>
-          <Button variant="contained">Subscribe</Button>
+          <Box className="sub-item">
+            <TextField
+              variant="outlined"
+              placeholder="Email address"
+              className="input-box"
+            />
+            <Button variant="contained" className="sub-btn">
+              Subscribe
+            </Button>
+          </Box>
         </Grid>
       </Grid>
     </Box>
