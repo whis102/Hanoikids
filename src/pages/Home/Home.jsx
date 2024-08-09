@@ -1,9 +1,11 @@
+import Carousel from "../../components/Carousel/Carousel";
 import Structure from "../../components/Structure/Structure";
+import "./Home.scss";
 
 export default function Home() {
   return (
     <Structure>
-      <h1>Home</h1>
+      <Carousel />
     </Structure>
   );
 }

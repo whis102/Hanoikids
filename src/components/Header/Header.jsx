@@ -27,9 +27,6 @@ export default function Header() {
             <Button className="button" onClick={() => navigate("/faqs")}>
               FAQs
             </Button>
-            <Button className="button" onClick={() => navigate("/blogs")}>
-              Blogs
-            </Button>
           </div>
 
           <Button variant="contained" onClick={() => navigate("/book-tour")}>

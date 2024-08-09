@@ -1,4 +1,5 @@
-import { Container } from "@mui/material";
+import PropTypes from "prop-types";
+import { Box, Container } from "@mui/material";
 
 import "./Structure.scss";
 import Partner from "../Partner/Partner";
@@ -11,11 +12,15 @@ export default function Structure({ children }) {
     <>
       <NavBar />
       <Header />
+      <Box className="container">{children}</Box>
       <Container>
-        {children}
         <Partner />
       </Container>
       <Footer />
     </>
   );
 }
+
+Structure.propTypes = {
+  children: PropTypes.node,
+};

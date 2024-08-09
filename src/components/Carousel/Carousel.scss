@@ -1,0 +1,47 @@
+.carousel-container {
+  height: auto;
+  position: relative;
+
+  .carousel-slide {
+    img {
+      width: 100%;
+      height: 700px;
+      object-fit: cover;
+    }
+  }
+
+  .slick-dots {
+    bottom: 10px;
+
+    li {
+      margin: 0 5px;
+
+      button::before {
+        font-size: 12px;
+        color: #fff;
+      }
+    }
+
+    .slick-active button::before {
+      color: #fff;
+    }
+  }
+
+  .slick-prev,
+  .slick-next {
+    z-index: 1;
+    position: absolute;
+    top: 50%; // Vertically center the arrows
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: #fff;
+  }
+
+  .slick-prev {
+    left: 10px;
+  }
+
+  .slick-next {
+    right: 10px;
+  }
+}
