@@ -1,6 +1,7 @@
 import "./Subscribe.scss";
 import { Box, Button, Grid, IconButton, TextField } from "@mui/material";
 import { Facebook, GitHub, LinkedIn, YouTube } from "@mui/icons-material";
+import { BiLogoTripAdvisor } from "react-icons/bi";
 
 export default function Subscribe() {
   return (
@@ -35,6 +36,14 @@ export default function Subscribe() {
               aria-label="Youtube"
             >
               <YouTube />
+            </IconButton>
+
+            <IconButton
+              href="https://www.tripadvisor.com/Attraction_Review-g293924-d1752779-Reviews-Hanoikids_Voluntary_English_Tour_Guiding_Club-Hanoi.html"
+              target="_blank"
+              aria-label="TripAdvisor"
+            >
+              <BiLogoTripAdvisor />
             </IconButton>
           </Box>
 

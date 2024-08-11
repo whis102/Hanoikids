@@ -4,14 +4,19 @@ import {
   Card,
   CardMedia,
   Container,
-  Grid,
   Paper,
   Typography,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  Stack,
+  Button,
 } from "@mui/material";
+import { Link } from "react-router-dom";
 
 import Logo from "../../assets/logo.png";
-import PayPal from "../../assets/paypal-logo.webp";
-import TripAd from "../../assets/tripadvisor-logo.webp";
+import { FaPaypal } from "react-icons/fa";
 
 import Copyright from "../Copyright/Copyright";
 import Subscribe from "../Subscribe/Subscribe";
@@ -20,33 +25,68 @@ export default function Footer() {
   return (
     <Box component={"footer"}>
       <Container>
-        <Grid container spacing={3}>
-          <Grid item xs={4}>
+        <Stack direction="row" spacing={3}>
+          <Box sx={{ width: "30%" }}>
             <Card>
               <CardMedia component={"img"} image={Logo} alt="Logo" />
             </Card>
-          </Grid>
-          <Grid item xs={4}>
-            <Paper className="footer-box" sx={{ padding: 2 }}>
+          </Box>
+
+          <Box sx={{ width: "40%" }}>
+            <Paper className="footer-box">
               <Typography variant="h5" gutterBottom className="footer-title">
-                Your Contribution
+                Pages
               </Typography>
-              <Card>
-                <CardMedia component={"img"} image={PayPal} alt="Logo" />
-              </Card>
+
+              <List>
+                {[
+                  { text: "Home", link: "/" },
+                  { text: "Tours", link: "/tours" },
+                  { text: "About Us", link: "/about-us" },
+                  { text: "Contact Us", link: "/contact-us" },
+                  { text: "FAQs", link: "/faqs" },
+                ].map((item, index) => (
+                  <ListItem key={index} disablePadding>
+                    <ListItemButton component={Link} to={item.link}>
+                      <ListItemText primary={item.text} />
+                    </ListItemButton>
+                  </ListItem>
+                ))}
+              </List>
             </Paper>
-          </Grid>
-          <Grid item xs={4}>
-            <Paper className="footer-box" sx={{ padding: 2 }}>
+          </Box>
+
+          <Box sx={{ width: "30%" }}>
+            <Paper className="footer-box">
               <Typography variant="h5" gutterBottom className="footer-title">
-                Review us
+                Contribution
               </Typography>
-              <Card>
-                <CardMedia component={"img"} image={TripAd} alt="Logo" />
-              </Card>
+
+              <Typography component={"p"}>
+                Your interest and support mean a lot to us. By contributing
+                here, you're helping us build a better Hanoikids.
+              </Typography>
+
+              <Button variant="contained">
+                <FaPaypal size={24} />
+                Donate
+              </Button>
             </Paper>
-          </Grid>
-        </Grid>
+
+            {/* <Paper className="footer-box">
+              <Typography variant="h5" gutterBottom className="footer-title">
+                Book Tours
+              </Typography>
+
+              <Typography component={"p"}>Book Tour</Typography>
+
+              <Button variant="contained">
+                <FaPaypal />
+                Donate
+              </Button>
+            </Paper> */}
+          </Box>
+        </Stack>
         <Subscribe />
         <Copyright />
       </Container>

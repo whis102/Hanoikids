@@ -9,9 +9,16 @@ footer {
   .footer-box {
     background-color: $primary-color;
     box-shadow: none;
+    padding: 1rem;
+
+    p {
+      color: white;
+    }
   }
 
   .footer-title {
     color: white;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid white;
   }
 }
