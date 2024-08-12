@@ -26,7 +26,7 @@ export default function Contact() {
           and long-term cooperation in the future.
         </Typography>
 
-        <Box className="contact-box">
+        <Box className="contact-container">
           <Typography variant="body1" gutterBottom>
             About Partnership:{" "}
             <Typography variant="body1" component="span">
@@ -34,16 +34,14 @@ export default function Contact() {
             </Typography>
           </Typography>
 
-          <Grid container spacing={2}>
+          <Grid container spacing={2} className="contact-box">
             <Grid item xs={4}>
-              <Typography variant="h5" gutterBottom>
-                President & Vice President
+              <Title heading={"h5"}>President & Vice President</Title>
+              <Typography variant="body1" gutterBottom>
+                Ms. Thu Phuong: (+84) 123 123 123
               </Typography>
               <Typography variant="body1" gutterBottom>
-                Ms. Thu Phuong: (+84) 931 100 703
-              </Typography>
-              <Typography variant="body1" gutterBottom>
-                Mr. Quoc Dung: (+84) 367 160 866
+                Mr. Quoc Dung: (+84) 123 123 123
               </Typography>
               <Typography variant="body1" gutterBottom>
                 Email: leaderboard.hnks@gmail.com
@@ -51,7 +49,7 @@ export default function Contact() {
             </Grid>
 
             <Grid item xs={4}>
-              <Card>
+              <Card className="contact-img">
                 <CardMedia
                   component="img"
                   height="300"
@@ -59,17 +57,15 @@ export default function Contact() {
                   alt="Bui Thu Phuong"
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h5" textAlign={"center"}>
+                  <Typography gutterBottom variant="h6">
                     Bui Thu Phuong
                   </Typography>
-                  <Typography variant="body2" textAlign={"center"}>
-                    President
-                  </Typography>
+                  <Typography component={"p"}>President</Typography>
                 </CardContent>
               </Card>
             </Grid>
             <Grid item xs={4}>
-              <Card>
+              <Card className="contact-img">
                 <CardMedia
                   component="img"
                   height={"300"}
@@ -77,12 +73,10 @@ export default function Contact() {
                   alt="Nguyen Quoc Dung"
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h5" textAlign={"center"}>
+                  <Typography gutterBottom variant="h6">
                     Nguyen Quoc Dung
                   </Typography>
-                  <Typography variant="body2" textAlign={"center"}>
-                    Vice President
-                  </Typography>
+                  <Typography component={"p"}>Vice President</Typography>
                 </CardContent>
               </Card>
             </Grid>
@@ -90,7 +84,7 @@ export default function Contact() {
         </Box>
 
         {/* Box 2 */}
-        <Box className="contact-box">
+        <Box className="contact-container">
           <Typography variant="body1" gutterBottom>
             About Tours:{" "}
             <Typography variant="body1" component="span">
@@ -98,9 +92,9 @@ export default function Contact() {
             </Typography>
           </Typography>
 
-          <Grid container spacing={2}>
+          <Grid container spacing={2} className="contact-box">
             <Grid item xs={4}>
-              <Card>
+              <Card className="contact-img">
                 <CardMedia
                   component="img"
                   height="300"
@@ -108,18 +102,18 @@ export default function Contact() {
                   alt="Bui Thu Phuong"
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h5" textAlign={"center"}>
-                    Bui Thu Phuong
+                  <Typography gutterBottom variant="h6">
+                    Pham Truong Son
                   </Typography>
-                  <Typography variant="body2" textAlign={"center"}>
-                    President
+                  <Typography component={"p"}>
+                    Head of Tour Operation Dept.
                   </Typography>
                 </CardContent>
               </Card>
             </Grid>
 
             <Grid item xs={4}>
-              <Card>
+              <Card className="contact-img">
                 <CardMedia
                   component="img"
                   height={"300"}
@@ -127,25 +121,23 @@ export default function Contact() {
                   alt="Nguyen Quoc Dung"
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h5" textAlign={"center"}>
-                    Nguyen Quoc Dung
+                  <Typography gutterBottom variant="h6">
+                    Vu Thao My
                   </Typography>
-                  <Typography variant="body2" textAlign={"center"}>
-                    Vice President
+                  <Typography component={"p"}>
+                    Deputy Head of Tour Operation Dept.
                   </Typography>
                 </CardContent>
               </Card>
             </Grid>
 
             <Grid item xs={4}>
-              <Typography variant="h5" gutterBottom>
-                Tour Operation Dept.
+              <Title heading={"h5"}>Tour Operation Dept.</Title>
+              <Typography variant="body1" gutterBottom>
+                Mr. Truong Son: (+84) 123 123 123
               </Typography>
               <Typography variant="body1" gutterBottom>
-                Mr. Truong Son: (+84) 931 100 703
-              </Typography>
-              <Typography variant="body1" gutterBottom>
-                Ms. Thao My: (+84) 367 160 866
+                Ms. Thao My: (+84) 123 123 123
               </Typography>
               <Typography variant="body1" gutterBottom>
                 Email: hanoikidsvn@gmail.com

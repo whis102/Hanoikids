@@ -31,28 +31,6 @@ export default function Footer() {
             <Card>
               <CardMedia component={"img"} image={Logo} alt="Logo" />
             </Card>
-            <List>
-              <ListItem>
-                <ListItemText>
-                  <Language />
-                  nguyen-chi-cong-cv.vercel.app
-                </ListItemText>
-              </ListItem>
-
-              <ListItem>
-                <ListItemText>
-                  <Phone />
-                  0868936515
-                </ListItemText>
-              </ListItem>
-
-              <ListItem>
-                <ListItemText>
-                  <Email />
-                  chicongnguyen.dev@gmail.com
-                </ListItemText>
-              </ListItem>
-            </List>
           </Box>
 
           <Box sx={{ width: "35%" }}>
@@ -95,19 +73,6 @@ export default function Footer() {
                 Donate
               </Button>
             </Paper>
-
-            {/* <Paper className="footer-box">
-              <Typography variant="h5" gutterBottom className="footer-title">
-                Book Tours
-              </Typography>
-
-              <Typography component={"p"}>Book Tour</Typography>
-
-              <Button variant="contained">
-                <FaPaypal />
-                Donate
-              </Button>
-            </Paper> */}
           </Box>
         </Stack>
         <Subscribe />

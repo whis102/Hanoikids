@@ -10,7 +10,7 @@ export default function FAQs() {
       <Title heading={"h4"}>Frequently Asked Questions</Title>
 
       <Container>
-        <Typography variant="subtitle1" gutterBottom>
+        <Typography component={"p"} gutterBottom>
           This section provides answers to common questions from Tourists and
           Kid-wannabes. If you cannot find the answer to your questions below or
           have urgent enquiries, please{" "}
