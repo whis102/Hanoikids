@@ -3,7 +3,6 @@
 footer {
   margin-top: 2rem;
   padding-top: 2rem;
-  padding-bottom: 1rem;
   background-color: $primary-color;
 
   .footer-box {
@@ -11,8 +10,22 @@ footer {
     box-shadow: none;
     padding: 1rem;
 
-    p {
+    li {
       color: white;
+
+      &:hover {
+        background-color: #fff;
+        color: $primary-color;
+      }
+    }
+
+    p {
+      margin: 1.2rem 0;
+      color: white;
+    }
+
+    svg {
+      margin-right: 0.45rem;
     }
   }
 

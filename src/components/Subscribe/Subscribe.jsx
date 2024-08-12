@@ -1,6 +1,12 @@
 import "./Subscribe.scss";
 import { Box, Button, Grid, IconButton, TextField } from "@mui/material";
-import { Facebook, GitHub, LinkedIn, YouTube } from "@mui/icons-material";
+import {
+  Facebook,
+  GitHub,
+  LinkedIn,
+  YouTube,
+  Language,
+} from "@mui/icons-material";
 import { BiLogoTripAdvisor } from "react-icons/bi";
 
 export default function Subscribe() {
@@ -44,6 +50,14 @@ export default function Subscribe() {
               aria-label="TripAdvisor"
             >
               <BiLogoTripAdvisor />
+            </IconButton>
+
+            <IconButton
+              href="nguyen-chi-cong-cv.vercel.app"
+              target="_blank"
+              aria-label="Nguyen Chi Cong Resume"
+            >
+              <Language />
             </IconButton>
           </Box>
 

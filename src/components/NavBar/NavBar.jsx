@@ -5,7 +5,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import { Link, Box, Stack } from "@mui/material";
+import { Link, Box, Stack, Typography } from "@mui/material";
 
 export default function NavBar() {
   return (
@@ -18,7 +18,7 @@ export default function NavBar() {
           className="info__link"
         >
           <EmailIcon fontSize={"small"} />
-          <p>chicongnguyen.dev@gmail.com</p>
+          <Typography component={"p"}>chicongnguyen.dev@gmail.com</Typography>
         </Link>
 
         <Link
@@ -28,7 +28,7 @@ export default function NavBar() {
           className="info__link"
         >
           <PhoneIcon fontSize={"small"} />
-          <p>0868936515</p>
+          <Typography component={"p"}>0868936515</Typography>
         </Link>
       </Stack>
 

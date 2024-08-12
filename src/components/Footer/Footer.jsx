@@ -13,11 +13,12 @@ import {
   Stack,
   Button,
 } from "@mui/material";
+
+import { Email, Phone, Language } from "@mui/icons-material";
+import { FaPaypal } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 import Logo from "../../assets/logo.png";
-import { FaPaypal } from "react-icons/fa";
-
 import Copyright from "../Copyright/Copyright";
 import Subscribe from "../Subscribe/Subscribe";
 
@@ -30,9 +31,31 @@ export default function Footer() {
             <Card>
               <CardMedia component={"img"} image={Logo} alt="Logo" />
             </Card>
+            <List>
+              <ListItem>
+                <ListItemText>
+                  <Language />
+                  nguyen-chi-cong-cv.vercel.app
+                </ListItemText>
+              </ListItem>
+
+              <ListItem>
+                <ListItemText>
+                  <Phone />
+                  0868936515
+                </ListItemText>
+              </ListItem>
+
+              <ListItem>
+                <ListItemText>
+                  <Email />
+                  chicongnguyen.dev@gmail.com
+                </ListItemText>
+              </ListItem>
+            </List>
           </Box>
 
-          <Box sx={{ width: "40%" }}>
+          <Box sx={{ width: "35%" }}>
             <Paper className="footer-box">
               <Typography variant="h5" gutterBottom className="footer-title">
                 Pages
@@ -56,7 +79,7 @@ export default function Footer() {
             </Paper>
           </Box>
 
-          <Box sx={{ width: "30%" }}>
+          <Box sx={{ width: "35%" }}>
             <Paper className="footer-box">
               <Typography variant="h5" gutterBottom className="footer-title">
                 Contribution
