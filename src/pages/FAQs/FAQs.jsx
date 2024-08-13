@@ -1,12 +1,12 @@
 import { Container, Link, Typography } from "@mui/material";
 
 import Title from "../../components/Title/Title";
-import Structure from "../../components/Structure/Structure";
+import Layout from "../../components/Layout/Layout";
 import Questions from "../../components/Questions/Questions";
 
 export default function FAQs() {
   return (
-    <Structure>
+    <Layout>
       <Title heading={"h4"}>Frequently Asked Questions</Title>
 
       <Container>
@@ -25,6 +25,6 @@ export default function FAQs() {
       </Container>
 
       <Questions />
-    </Structure>
+    </Layout>
   );
 }

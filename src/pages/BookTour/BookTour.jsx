@@ -5,7 +5,7 @@ import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import Structure from "../../components/Structure/Structure";
+import Layout from "../../components/Layout/Layout";
 import { Container } from "@mui/material";
 
 const steps = ["Booking details", "Personal details", "Checkout"];
@@ -57,7 +57,7 @@ export default function BookTour() {
   };
 
   return (
-    <Structure>
+    <Layout>
       <Container>
         <Stepper activeStep={activeStep}>
           {steps.map((label, index) => {
@@ -115,6 +115,6 @@ export default function BookTour() {
           </React.Fragment>
         )}
       </Container>
-    </Structure>
+    </Layout>
   );
 }

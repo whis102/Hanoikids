@@ -1,10 +1,14 @@
 import "./NavBar.scss";
-import EmailIcon from "@mui/icons-material/Email";
-import PhoneIcon from "@mui/icons-material/Phone";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import YouTubeIcon from "@mui/icons-material/YouTube";
-import GitHubIcon from "@mui/icons-material/GitHub";
+
+import {
+  GitHub,
+  LinkedIn,
+  YouTube,
+  Language,
+  Email,
+  Phone,
+} from "@mui/icons-material";
+
 import { Link, Box, Stack, Typography } from "@mui/material";
 
 export default function NavBar() {
@@ -17,7 +21,7 @@ export default function NavBar() {
           color={"white"}
           className="info__link"
         >
-          <EmailIcon fontSize={"small"} />
+          <Email fontSize={"small"} />
           <Typography component={"p"}>chicongnguyen.dev@gmail.com</Typography>
         </Link>
 
@@ -27,19 +31,19 @@ export default function NavBar() {
           color={"white"}
           className="info__link"
         >
-          <PhoneIcon fontSize={"small"} />
+          <Phone fontSize={"small"} />
           <Typography component={"p"}>0868936515</Typography>
         </Link>
       </Stack>
 
       <Stack direction={"row"} spacing={2} padding={1}>
         <Link
-          href="https://www.facebook.com/oc.voi.voii/"
+          href="https://nguyen-chi-cong-cv.vercel.app/"
           underline="none"
           color={"white"}
           target="_blank"
         >
-          <FacebookIcon fontSize={"small"} />
+          <Language fontSize={"small"} />
         </Link>
         <Link
           href="https://github.com/whis102"
@@ -47,7 +51,7 @@ export default function NavBar() {
           color={"white"}
           target="_blank"
         >
-          <GitHubIcon fontSize={"small"} />
+          <GitHub fontSize={"small"} />
         </Link>
         <Link
           href="https://www.youtube.com/@zWhis155"
@@ -55,7 +59,7 @@ export default function NavBar() {
           color={"white"}
           target="_blank"
         >
-          <YouTubeIcon fontSize={"small"} />
+          <YouTube fontSize={"small"} />
         </Link>
 
         <Link
@@ -64,7 +68,7 @@ export default function NavBar() {
           color={"white"}
           target="_blank"
         >
-          <LinkedInIcon fontSize={"small"} />
+          <LinkedIn fontSize={"small"} />
         </Link>
       </Stack>
     </Box>

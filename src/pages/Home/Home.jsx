@@ -3,12 +3,12 @@ import "./Home.scss";
 
 import Title from "../../components/Title/Title";
 import Carousel from "../../components/Carousel/Carousel";
-import Structure from "../../components/Structure/Structure";
+import Layout from "../../components/Layout/Layout";
 import StatsSection from "../../components/StatsSection/StatsSection";
 
 export default function Home() {
   return (
-    <Structure>
+    <Layout>
       <Carousel />
       <Container className="about-section">
         <Title heading={"h4"}>About Us</Title>
@@ -23,6 +23,6 @@ export default function Home() {
 
         <StatsSection />
       </Container>
-    </Structure>
+    </Layout>
   );
 }

@@ -1,10 +1,10 @@
 import { Container, Typography } from "@mui/material";
-import Structure from "../../components/Structure/Structure";
+import Layout from "../../components/Layout/Layout";
 import Title from "../../components/Title/Title";
 
 export default function About() {
   return (
-    <Structure>
+    <Layout>
       <Title heading={"h4"}>Who We Are</Title>
       <Container>
         <Typography gutterBottom>
@@ -17,6 +17,6 @@ export default function About() {
           potentialthrough practical experiences and extracurricular activities.
         </Typography>
       </Container>
-    </Structure>
+    </Layout>
   );
 }

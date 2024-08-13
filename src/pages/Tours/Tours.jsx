@@ -10,14 +10,14 @@ import {
 } from "@mui/material";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
-import Structure from "../../components/Structure/Structure";
+import Layout from "../../components/Layout/Layout";
 import Title from "../../components/Title/Title";
 import CityTour from "../../assets/city-tour.webp";
 import FoodTour from "../../assets/food-tour.webp";
 
 export default function Tours() {
   return (
-    <Structure>
+    <Layout>
       <Title heading={"h4"}>Our Tours</Title>
 
       <Container>
@@ -98,6 +98,6 @@ export default function Tours() {
           </Grid>
         </Grid>
       </Container>
-    </Structure>
+    </Layout>
   );
 }

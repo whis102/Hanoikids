@@ -7,16 +7,15 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
-import Structure from "../../components/Structure/Structure";
-import Title from "../../components/Title/Title";
-
 import "./Contact.scss";
+import Layout from "../../components/Layout/Layout";
+import Title from "../../components/Title/Title";
 import Nhoc from "../../assets/nhoc-ct.jpg";
 import Vie from "../../assets/vie-pct.jpg";
 
 export default function Contact() {
   return (
-    <Structure>
+    <Layout>
       <Title heading={"h4"}>Who We Are</Title>
       <Container>
         <Typography gutterBottom>
@@ -146,6 +145,6 @@ export default function Contact() {
           </Grid>
         </Box>
       </Container>
-    </Structure>
+    </Layout>
   );
 }

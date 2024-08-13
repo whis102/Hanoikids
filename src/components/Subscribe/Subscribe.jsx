@@ -1,12 +1,6 @@
 import "./Subscribe.scss";
 import { Box, Button, Grid, IconButton, TextField } from "@mui/material";
-import {
-  Facebook,
-  GitHub,
-  LinkedIn,
-  YouTube,
-  Language,
-} from "@mui/icons-material";
+import { GitHub, LinkedIn, YouTube, Language } from "@mui/icons-material";
 import { BiLogoTripAdvisor } from "react-icons/bi";
 
 export default function Subscribe() {
@@ -15,13 +9,6 @@ export default function Subscribe() {
       <Grid container spacing={3}>
         <Grid item xs={12} className="sub-box">
           <Box className="sub-item">
-            <IconButton
-              href="https://www.facebook.com/oc.voi.voii/"
-              target="_blank"
-              aria-label="Facebook"
-            >
-              <Facebook />
-            </IconButton>
             <IconButton
               href="https://github.com/whis102"
               target="_blank"

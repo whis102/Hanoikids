@@ -1,13 +1,12 @@
-import PropTypes from "prop-types";
 import { Box, Container } from "@mui/material";
 
-import "./Structure.scss";
+import "./Layout.scss";
 import Partner from "../Partner/Partner";
 import NavBar from "../NavBar/NavBar";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
-export default function Structure({ children }) {
+export default function Layout({ children }) {
   return (
     <>
       <NavBar />
@@ -20,7 +19,3 @@ export default function Structure({ children }) {
     </>
   );
 }
-
-Structure.propTypes = {
-  children: PropTypes.node,
-};
