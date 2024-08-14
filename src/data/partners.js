@@ -15,9 +15,8 @@ const partners = [
 
   {
     id: 3,
-    image:
-      "https://hanoikids.org/wp-content/uploads/2024/04/BACH-KIM-GP-Travel.png",
-    alt: "GP Travel",
+    image: "https://hanoikids.org/wp-content/uploads/2024/04/NTT-dong-Toco.jpg",
+    alt: "Tocotoco",
   },
   {
     id: 4,
@@ -52,9 +51,8 @@ const partners = [
 
   {
     id: 9,
-    image:
-      "https://hanoikids.org/wp-content/uploads/2021/09/a-creative-agency-official-logo-registered_2-1024x614.png",
-    alt: "À Agency",
+    image: "https://hanoikids.org/wp-content/uploads/2024/04/NTT-dong-Toco.jpg",
+    alt: "Tocotoco",
   },
 ];
 

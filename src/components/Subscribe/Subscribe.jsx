@@ -40,7 +40,7 @@ export default function Subscribe() {
             </IconButton>
 
             <IconButton
-              href="nguyen-chi-cong-cv.vercel.app"
+              href="https://nguyen-chi-cong-cv.vercel.app/"
               target="_blank"
               aria-label="Nguyen Chi Cong Resume"
             >
@@ -49,11 +49,7 @@ export default function Subscribe() {
           </Box>
 
           <Box className="sub-item">
-            <TextField
-              variant="outlined"
-              placeholder="Email address"
-              className="input-box"
-            />
+            <TextField variant="outlined" placeholder="Email address" />
             <Button variant="contained" className="sub-btn">
               Subscribe
             </Button>

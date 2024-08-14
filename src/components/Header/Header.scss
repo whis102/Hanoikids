@@ -1,40 +1,29 @@
-.header {
-  flex-grow: 1;
+@import "../../styles.scss";
 
-  div {
-    background-color: white;
-  }
-}
+#root header {
+  background-color: white;
 
-.logo {
-  margin-right: 16px;
-  display: flex;
-  align-items: center;
-
-  img {
-    width: 200px;
+  .logo {
+    width: 16rem;
+    box-shadow: none;
   }
 
-  img:hover {
-    cursor: pointer;
+  .nav-links {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 3rem;
+
+    button {
+      color: black;
+      text-transform: none;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
   }
-}
 
-.nav-links {
-  flex-grow: 1;
-  display: flex;
-  justify-content: space-around;
-
-  .button {
-    color: black;
-    text-transform: none;
-    font-size: 1.1rem;
-    font-weight: 500;
-    font-family: "Quicksand", sans-serif;
+  .btn-book {
+    border-radius: 9px;
+    background-color: $primary-color;
   }
-}
-
-.button {
-  color: black;
-  text-transform: none;
 }

@@ -1,3 +1,4 @@
+import "./FAQs.scss";
 import { Container, Link, Typography } from "@mui/material";
 
 import Title from "../../components/Title/Title";
@@ -22,9 +23,8 @@ export default function FAQs() {
             contact us.
           </Link>
         </Typography>
+        <Questions />
       </Container>
-
-      <Questions />
     </Layout>
   );
 }
