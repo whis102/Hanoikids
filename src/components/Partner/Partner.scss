@@ -1,0 +1,14 @@
+.partner-container > div {
+  display: flex;
+  justify-content: center;
+
+  .partner-img {
+    box-shadow: none;
+
+    img {
+      border-radius: 50%;
+      height: 200px;
+      width: 200px;
+    }
+  }
+}

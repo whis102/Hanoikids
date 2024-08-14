@@ -20,7 +20,6 @@ export default function Home() {
           Hanoi's rich culture and traditions. Join us for a memorable journey
           through the heart of Vietnam.
         </Typography>
-
         <StatsSection />
       </Container>
     </Layout>
