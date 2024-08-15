@@ -16,7 +16,7 @@ import Vie from "../../assets/vie-pct.jpg";
 export default function Contact() {
   return (
     <Layout>
-      <Title heading={"h4"}>Who We Are</Title>
+      <Title heading={"h4"}>Contact Us</Title>
       <Container>
         <Typography gutterBottom>
           We truly appreciate your support and contribution to our organization.
