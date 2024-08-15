@@ -1,0 +1,38 @@
+@import "../../styles.scss";
+
+.tour-package {
+  margin-bottom: 2rem;
+
+  display: flex;
+  align-items: center;
+
+  .img-box {
+    box-shadow: none;
+    border-radius: 10%;
+
+    &:hover {
+      box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+        0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    }
+  }
+
+  h4 {
+    font-weight: 550;
+    font-size: 1.8rem;
+  }
+
+  .btn-box {
+    margin-top: -0.7rem;
+
+    .tour-btn {
+      display: flex;
+      align-items: center;
+
+      p {
+        color: $primary-color;
+        font-weight: 600;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

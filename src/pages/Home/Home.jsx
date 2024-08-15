@@ -1,10 +1,10 @@
-import { Container, Typography } from "@mui/material";
 import "./Home.scss";
-
 import Title from "../../components/Title/Title";
 import Carousel from "../../components/Carousel/Carousel";
 import Layout from "../../components/Layout/Layout";
 import StatsSection from "../../components/StatsSection/StatsSection";
+
+import { Container, Typography } from "@mui/material";
 
 export default function Home() {
   return (

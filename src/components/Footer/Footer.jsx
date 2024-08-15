@@ -17,7 +17,7 @@ import {
 import { FaPaypal } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-import Logo2 from "../../assets/logo2.png";
+import Logo2 from "../../assets/logo2.webp";
 import Copyright from "../Copyright/Copyright";
 import Subscribe from "../Subscribe/Subscribe";
 
