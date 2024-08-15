@@ -5,6 +5,11 @@ footer {
   padding-top: 2rem;
   background-color: $primary-color;
 
+  .footer-img {
+    box-shadow: none;
+    background-color: transparent;
+  }
+
   .footer-box {
     background-color: $primary-color;
     box-shadow: none;

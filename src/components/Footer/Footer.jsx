@@ -14,11 +14,10 @@ import {
   Button,
 } from "@mui/material";
 
-import { Email, Phone, Language } from "@mui/icons-material";
 import { FaPaypal } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-import Logo from "../../assets/logo.png";
+import Logo2 from "../../assets/logo2.png";
 import Copyright from "../Copyright/Copyright";
 import Subscribe from "../Subscribe/Subscribe";
 
@@ -28,8 +27,8 @@ export default function Footer() {
       <Container>
         <Stack direction="row" spacing={3}>
           <Box sx={{ width: "30%" }}>
-            <Card>
-              <CardMedia component={"img"} image={Logo} alt="Logo" />
+            <Card className="footer-img">
+              <CardMedia component={"img"} image={Logo2} alt="Logo" />
             </Card>
           </Box>
 
