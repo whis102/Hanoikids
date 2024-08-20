@@ -3,8 +3,7 @@ import { Container } from "@mui/material";
 import TourCard from "../../components/TourCard/TourCard";
 import Layout from "../../components/Layout/Layout";
 import Title from "../../components/Title/Title";
-import CityTour from "../../assets/city-tour.webp";
-import FoodTour from "../../assets/food-tour.webp";
+import tourData from "../../data/tourData";
 
 export default function Tours() {
   return (
@@ -12,24 +11,15 @@ export default function Tours() {
       <Title heading={"h4"}>Our Tours</Title>
 
       <Container>
-        <TourCard
-          title="City Tour"
-          description="Our charming Hanoi offers you numerous chances to experience the
-                modern living style well harmonizing with traditional breath.
-                Get ready to discover our local life by getting lost in the maze
-                of streets and bustling atmosphere. You will definitely not
-                regret it!"
-          image={CityTour}
-        />
-        <TourCard
-          title="Food Tour"
-          description="Hanoi street food is a fascinating combination of diverse
-                flavours which will impress you at the very first try. Let’s
-                take the chance to explore our culinary world and enjoy the
-                local lifestyle with a food tour around the city!"
-          image={FoodTour}
-          reverse
-        />
+        {tourData.map((tour, index) => (
+          <TourCard
+            key={index}
+            title={tour.title}
+            description={tour.description}
+            image={tour.image}
+            reverse={tour.title === "Food Tour"}
+          />
+        ))}
       </Container>
     </Layout>
   );
