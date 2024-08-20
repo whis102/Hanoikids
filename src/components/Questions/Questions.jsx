@@ -17,7 +17,9 @@ export default function Questions() {
     <Container className="questions-container">
       {questionsBank.map((questionSet, index) => (
         <>
-          <Title heading={"h6"}>{questionSet.category}</Title>
+          <Title heading={"h6"} key={index}>
+            {questionSet.category}
+          </Title>
           {questionSet.questions.map((question, innerIndex) => (
             <Accordion key={innerIndex}>
               <AccordionSummary

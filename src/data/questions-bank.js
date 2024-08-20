@@ -75,6 +75,39 @@ const questionsBank = [
           "No. Any amount is appreciated. We truly thank you for your contribution to help build and grow a better Hanoikids.",
       },
     ],
+
+    category: "About Recruitment:",
+    questions: [
+      {
+        id: 1,
+        question:
+          "When is the new member recruitment (s)? How can I become a member of Hanoikids?",
+        answer:
+          "Hanoikids recruits new members twice a year in the Spring Recruitment and Fall Recruitment. Hanoikids welcomes university/college students (except final-year students) in Hanoi with intermediate English skills and at least 1 year of commitment. To become an official member, you must pass the 3-round selection process (Round 1: Application Form, Round 2: Test and Activities, Round 3: Personal Interview) and fully complete the compulsory Basic Training Course.",
+      },
+
+      {
+        id: 2,
+        question: "Do I have to be excellent at English?",
+        answer:
+          "Being a travel mate will require at least an intermediate English level. It’s great if you already have a good English background. However, please note that English is not the only criterion for selection. As long as you can showcase your enthusiasm and motivation to learn, there’s always an open door for you.",
+      },
+
+      {
+        id: 3,
+        question: "Do I need to have a wide range of knowledge to be a member?",
+        answer:
+          "If you have a wide knowledge, that’s really a plus point! If not just yet, our training sessions will equip you with the necessary background (history, culture and more) so that you can confidently go on tours. So don’t be afraid to apply!",
+      },
+
+      {
+        id: 4,
+        question:
+          "Along with being a travel mate, are there any other activities I can participate in Hanoikids?",
+        answer:
+          "Definitely!Hanoikids consists of 5 main departments: Training, Internal Relations, External Relations, Tour Operation and Public Relations working on different roles to run the club. Moreover, we also run many other side projects: Website team, Tour team, etc. What’s more, lots of internal activities for members are organised, from trainings, sharing sessions to contests, outings, club trips. Doesn’t that sound appealing?",
+      },
+    ],
   },
 ];
 

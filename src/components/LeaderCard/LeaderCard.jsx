@@ -40,6 +40,7 @@ export default function LeaderCard({ about, contact, title }) {
             </CardContent>
           </Card>
         </Grid>
+
         <Grid item xs={4}>
           <Card className="contact-img">
             <CardMedia

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import statsData from "../../data/stats.json";
+import statsData from "../../data/stats.js";
 import { Grid, Typography, Box } from "@mui/material";
 import "./StatsSection.scss";
 
