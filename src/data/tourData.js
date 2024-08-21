@@ -1,7 +1,7 @@
 import CityTour from "../assets/city-tour.webp";
 import FoodTour from "../assets/food-tour.webp";
 
-export const tourData = [
+const tourData = [
   {
     title: "City Tour",
     description:
@@ -15,3 +15,5 @@ export const tourData = [
     image: FoodTour,
   },
 ];
+
+export default tourData;
