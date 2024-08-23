@@ -1,12 +1,5 @@
 import "./LeaderCard.scss";
-import {
-  Box,
-  Card,
-  CardContent,
-  CardMedia,
-  Grid,
-  Typography,
-} from "@mui/material";
+import { Box, Card, CardMedia, Grid, Typography } from "@mui/material";
 import Title from "../../components/Title/Title";
 
 export default function LeaderCard({
@@ -27,14 +20,11 @@ export default function LeaderCard({
   return (
     <Box className="contact-container">
       <Typography variant="body1" gutterBottom component={"span"}>
-        {about}
-      </Typography>
-      <Typography variant="body1" component="span">
-        {aboutContent}
+        {`${about} ${aboutContent}`}
       </Typography>
 
       <Grid container spacing={2} className="contact-box">
-        <Grid item xs={4} order={reverse ? 3 : 1}>
+        <Grid item xs={4} order={reverse ? 1 : 2}>
           <Title heading={"h5"}>{dept}</Title>
           <Typography variant="body1" gutterBottom>
             {contact1}
@@ -47,28 +37,24 @@ export default function LeaderCard({
           </Typography>
         </Grid>
 
-        <Grid item xs={4} order={reverse ? 1 : 2 || reverse ? 2 : 1}>
+        <Grid item xs={4} order={reverse ? 2 : 1}>
           <Card className="contact-img">
-            <CardMedia component="img" height="300" image={image} />
-            <CardContent>
-              <Typography gutterBottom variant="h6">
-                {name}
-              </Typography>
-              <Typography component={"p"}>{title}</Typography>
-            </CardContent>
+            <CardMedia component="img" height="350" image={image} />
           </Card>
+          <Typography gutterBottom variant="h6">
+            {name}
+          </Typography>
+          <Typography component={"p"}>{title}</Typography>
         </Grid>
 
-        <Grid item xs={4} order={reverse ? 1 : 3}>
+        <Grid item xs={4} order={reverse ? 3 : 1}>
           <Card className="contact-img">
-            <CardMedia component="img" height={"300"} image={image1} />
-            <CardContent>
-              <Typography gutterBottom variant="h6">
-                {name1}
-              </Typography>
-              <Typography component={"p"}>{title1}</Typography>
-            </CardContent>
+            <CardMedia component="img" height={"350"} image={image1} />
           </Card>
+          <Typography gutterBottom variant="h6">
+            {name1}
+          </Typography>
+          <Typography component={"p"}>{title1}</Typography>
         </Grid>
       </Grid>
     </Box>

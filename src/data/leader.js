@@ -10,12 +10,12 @@ const leader = [
     contact2: "Mr. Quoc Dung: (+84) 123 123 123",
     email: "Email: leaderboard.hnks@gmail.com",
 
-    name: "Le Thi Hanh Nguyen",
-    image: { Nhoc },
+    name: "Hoang Thi Minh Ngoc",
+    image: Nhoc,
     title: "President",
 
-    name1: "Nguyen Chi Cong",
-    image1: { Vie },
+    name1: "Le Mai Linh",
+    image1: Vie,
     title1: "Vice President",
   },
 
@@ -29,12 +29,12 @@ const leader = [
     email: "Email: hanoikidsvn@gmail.com",
 
     name: "Le Thi Hanh Nguyen",
-    image: { Vie },
-    title: "Vice President",
+    image: Vie,
+    title: "Head of Tour Operation Dept.",
 
     name1: "Nguyen Chi Cong",
-    image1: { Vie },
-    title1: "Vice President",
+    image1: Vie,
+    title1: "Deputy Head of Tour Operation Dept.",
   },
 ];
 

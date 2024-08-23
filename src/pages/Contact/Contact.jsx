@@ -31,7 +31,7 @@ export default function Contact() {
             title={leaders.title}
             name1={leaders.name1}
             image1={leaders.image1}
-            reverse={leaders.about === "About Tours:"}
+            reverse={leaders.about === "About Partnership: "}
             title1={leaders.title1}
           />
         ))}
