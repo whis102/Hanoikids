@@ -6,7 +6,7 @@ import Title from "../Title/Title";
 export default function Partner() {
   return (
     <Container>
-      <Title heading={"h4"}>Our Partner</Title>
+      <Title heading={"h4"}>Partnership</Title>
 
       <Grid container spacing={4} className="partner-container">
         {partners.map((recommend, index) => (

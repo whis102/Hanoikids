@@ -20,7 +20,7 @@ export default function History() {
           </TimelineOppositeContent>
 
           <TimelineSeparator>
-            <TimelineDot />
+            <TimelineDot>{time.yearRange}</TimelineDot>
             <TimelineConnector />
           </TimelineSeparator>
 
