@@ -1,9 +1,11 @@
+.step-box svg {
+  width: 1.3em;
+  height: 1.3em;
+}
+
 .btn-box {
   display: flex;
-  flex-direction: row;
+  // flex-direction: row;
   justify-content: center;
-  padding-top: 2rem;
-
-  .btn-submit {
-  }
+  padding: 1em 0;
 }

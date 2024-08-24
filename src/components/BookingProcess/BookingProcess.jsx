@@ -6,8 +6,11 @@ import {
   StepLabel,
   Button,
   Typography,
+  Container,
 } from "@mui/material";
 import { useState } from "react";
+import Title from "../Title/Title";
+import BookingForm from "../BookingForm/BookingForm";
 
 const steps = ["Booking details", "Personal details", "Checkout"];
 
@@ -27,14 +30,14 @@ export default function BookingProcess() {
   };
 
   return (
-    <>
-      <Stepper activeStep={activeStep}>
+    <Container>
+      <Stepper activeStep={activeStep} sx={{ mt: 5, marginX: 10 }}>
         {steps.map((label, index) => {
           const stepProps = {};
           const labelProps = {};
 
           return (
-            <Step key={index} {...stepProps}>
+            <Step key={index} {...stepProps} className="step-box">
               <StepLabel {...labelProps}>{label}</StepLabel>
             </Step>
           );
@@ -45,24 +48,34 @@ export default function BookingProcess() {
           <Typography sx={{ mt: 2, mb: 1 }}>
             All steps completed - you&apos;re finished
           </Typography>
-          <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
-            <Box sx={{ flex: "1 1 auto" }} />
-            <Button onClick={handleReset}>Book Other Tour</Button>
+          <Box className="btn-box">
+            <Button variant="contained" onClick={handleReset}>
+              Book Other Tour
+            </Button>
           </Box>
         </>
       ) : (
         <>
-          <Typography sx={{ mt: 2, mb: 1 }}>{steps}</Typography>
+          <Title heading={"h4"}>{steps[activeStep]}</Title>
+          <Typography
+            component={"p"}
+            sx={{ textAlign: "center", fontStyle: "italic" }}
+          >
+            All this field are required
+          </Typography>
+          <BookingForm />
+
           <Box className="btn-box">
-            <Button
-              variant="outlined"
-              color="inherit"
-              disabled={activeStep === 0}
-              onClick={handleBack}
-              sx={{ mr: 1 }}
-            >
-              Back
-            </Button>
+            {activeStep > 0 && (
+              <Button
+                variant="outlined"
+                color="inherit"
+                onClick={handleBack}
+                sx={{ mr: 1 }}
+              >
+                Back
+              </Button>
+            )}
 
             <Button
               variant="contained"
@@ -74,6 +87,6 @@ export default function BookingProcess() {
           </Box>
         </>
       )}
-    </>
+    </Container>
   );
 }
