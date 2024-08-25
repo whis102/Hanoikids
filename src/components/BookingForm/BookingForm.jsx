@@ -1,5 +1,5 @@
+import "./BookingForm.scss";
 import { useState } from "react";
-
 import {
   Box,
   TextField,
@@ -8,8 +8,10 @@ import {
   InputLabel,
   FormControl,
   IconButton,
+  InputAdornment,
 } from "@mui/material";
 import { Add, Remove } from "@mui/icons-material";
+import { TOUR_OPTIONS, STARTING_TIMES } from "../../data/booking";
 
 export default function BookingForm() {
   const [participants, setParticipants] = useState(1);
@@ -23,13 +25,12 @@ export default function BookingForm() {
   };
 
   return (
-    <Box sx={{ maxWidth: 800, mx: "auto", p: 3 }}>
-      {/* Tour option */}
+    <Box className="booking-box">
       <TextField
         fullWidth
         margin="normal"
         label="Hotel Name"
-        placeholder="Write 'none' if you don't have any"
+        placeholder="Your hotel name use for pickup purpose"
         required
       />
 
@@ -37,7 +38,7 @@ export default function BookingForm() {
         fullWidth
         margin="normal"
         label="Hotel Address"
-        placeholder="Write 'none' if you don't have any"
+        placeholder="Your hotel name use for pickup purpose"
         required
       />
 
@@ -51,19 +52,14 @@ export default function BookingForm() {
           defaultValue=""
           label="Tour option"
         >
-          <MenuItem value="option1">Imperial Citadel of Thang Long</MenuItem>
-          <MenuItem value="option2">Hoa Lo Prison</MenuItem>
-          <MenuItem value="option3">Bat Trang Ceramic Village</MenuItem>
-          <MenuItem value="option4">Old Quater and French Quater</MenuItem>
-          <MenuItem value="option5">Vietnam Museum of Ethnology</MenuItem>
-          <MenuItem value="option6">Bat Trang Ceramic Village</MenuItem>
-          <MenuItem value="option7">
-            Temple of Literature and Ho Chi Minh Complex
-          </MenuItem>
+          {TOUR_OPTIONS.map((option) => (
+            <MenuItem key={option.value} value={option.value}>
+              {option.label}
+            </MenuItem>
+          ))}
         </Select>
       </FormControl>
 
-      {/* Date */}
       <TextField
         fullWidth
         margin="normal"
@@ -75,11 +71,14 @@ export default function BookingForm() {
         required
       />
 
-      {/* Starting time */}
       <FormControl
         fullWidth
         margin="normal"
-        sx={{ display: "flex", flexDirection: "row" }}
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+        }}
       >
         <InputLabel id="starting-time-label" required>
           Starting time
@@ -89,32 +88,40 @@ export default function BookingForm() {
           id="starting-time"
           defaultValue=""
           label="Starting time"
-          sx={{ width: "60%" }}
+          sx={{ width: "70%" }}
         >
-          <MenuItem value="09:00 Vietnam GMT +7">09:00 Vietnam GMT +7</MenuItem>
-          <MenuItem value="14:00 Vietnam GMT +7">14:00 Vietnam GMT +7</MenuItem>
+          {STARTING_TIMES.map((time) => (
+            <MenuItem key={time.value} value={time.value}>
+              {time.label}
+            </MenuItem>
+          ))}
         </Select>
 
-        <TextField
-          label="Number of participants"
-          value={participants}
-          InputProps={{
-            readOnly: true,
-          }}
-          sx={{ width: "30%" }}
-          required
-        ></TextField>
-        {/* <Box> */}
-        <IconButton onClick={handleRemoveParticipant} color="primary">
-          <Remove />
-        </IconButton>
-        <IconButton onClick={handleAddParticipant} color="primary">
-          <Add />
-        </IconButton>
-        {/* </Box> */}
+        <Box sx={{ width: "27%" }}>
+          <TextField
+            label="Number of participants"
+            value={participants}
+            InputProps={{
+              readOnly: true,
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton
+                    onClick={handleRemoveParticipant}
+                    color="primary"
+                    disabled={participants <= 1}
+                  >
+                    <Remove />
+                  </IconButton>
+                  <IconButton onClick={handleAddParticipant} color="primary">
+                    <Add />
+                  </IconButton>
+                </InputAdornment>
+              ),
+            }}
+          />
+        </Box>
       </FormControl>
 
-      {/* Special request */}
       <TextField
         fullWidth
         margin="normal"

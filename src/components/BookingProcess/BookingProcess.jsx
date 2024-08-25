@@ -7,15 +7,20 @@ import {
   Button,
   Typography,
   Container,
+  Modal,
+  FormControl,
 } from "@mui/material";
 import { useState } from "react";
 import Title from "../Title/Title";
 import BookingForm from "../BookingForm/BookingForm";
+import PersonalDetails from "../PersonalDetails/PersonalDetails";
 
 const steps = ["Booking details", "Personal details", "Checkout"];
 
 export default function BookingProcess() {
   const [activeStep, setActiveStep] = useState(0);
+  const [open, setOpen] = useState(false);
+  const handleClose = () => setOpen(false);
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -27,6 +32,10 @@ export default function BookingProcess() {
 
   const handleReset = () => {
     setActiveStep(0);
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setOpen(true);
   };
 
   return (
@@ -44,7 +53,12 @@ export default function BookingProcess() {
         })}
       </Stepper>
       {activeStep === steps.length ? (
-        <>
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
           <Typography sx={{ mt: 2, mb: 1 }}>
             All steps completed - you&apos;re finished
           </Typography>
@@ -53,7 +67,7 @@ export default function BookingProcess() {
               Book Other Tour
             </Button>
           </Box>
-        </>
+        </Modal>
       ) : (
         <>
           <Title heading={"h4"}>{steps[activeStep]}</Title>
@@ -63,7 +77,8 @@ export default function BookingProcess() {
           >
             All this field are required
           </Typography>
-          <BookingForm />
+          {activeStep === 0 && <BookingForm />}
+          {activeStep === 1 && <PersonalDetails />}
 
           <Box className="btn-box">
             {activeStep > 0 && (
@@ -72,18 +87,33 @@ export default function BookingProcess() {
                 color="inherit"
                 onClick={handleBack}
                 sx={{ mr: 1 }}
+                size="large"
               >
                 Back
               </Button>
             )}
 
-            <Button
-              variant="contained"
-              onClick={handleNext}
-              className="btn-submit"
-            >
-              {activeStep === steps.length - 1 ? "Submit" : "Continue"}
-            </Button>
+            {activeStep === steps.length - 1 ? (
+              <FormControl onSubmit={handleSubmit}>
+                <Button
+                  variant="contained"
+                  type="submit" // Add type="submit" for form submission
+                  className="btn-submit"
+                  size="large"
+                >
+                  Submit
+                </Button>
+              </FormControl>
+            ) : (
+              <Button
+                variant="contained"
+                onClick={handleNext}
+                className="btn-submit"
+                size="large"
+              >
+                Continue
+              </Button>
+            )}
           </Box>
         </>
       )}
