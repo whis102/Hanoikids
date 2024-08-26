@@ -41,7 +41,7 @@ export default function TourCard({ title, description, image, reverse }) {
           </Typography>
         </Box>
 
-        <Grid container spacing={3} className="btn-box">
+        <Grid container spacing={3} className="explore-box">
           <Grid item xs={3}>
             <Link href="/book-tour" underline="none" className="tour-btn">
               <Typography component={"p"}>Explore</Typography>
