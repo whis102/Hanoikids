@@ -1,3 +1,3 @@
-import "./ParallaxImage.scss";
+import "./Parallax.scss";
 
 export default function ParallaxImage() {}

@@ -1,10 +1,9 @@
-// leader.js
 import Nhoc from "../assets/nhoc-ct.jpg";
 import Vie from "../assets/vie-pct.jpg";
 
 const leaders = [
   {
-    category: "About Partnership",
+    category: "About Partnership: ",
     description: "For partnership, please contact our Leaderboard",
     department: "President & Vice President",
     contacts: [
@@ -26,7 +25,7 @@ const leaders = [
     ],
   },
   {
-    category: "About Tours",
+    category: "About Tours: ",
     description:
       "For tour-related questions, please contact our Tour Operators",
     department: "Tour Operation Department",

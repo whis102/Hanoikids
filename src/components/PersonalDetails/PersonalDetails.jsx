@@ -1,5 +1,4 @@
 import "./PersonalDetails.scss";
-import { useState } from "react";
 import {
   Box,
   TextField,
@@ -7,10 +6,7 @@ import {
   Select,
   InputLabel,
   FormControl,
-  IconButton,
-  InputAdornment,
 } from "@mui/material";
-import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 export default function PersonalDetails() {
   return (
@@ -45,7 +41,6 @@ export default function PersonalDetails() {
       >
         <TextField
           sx={{ width: "70%" }}
-          margin="normal"
           label="Date"
           type="date"
           InputLabelProps={{
@@ -54,7 +49,7 @@ export default function PersonalDetails() {
           required
         />
 
-        <Box sx={{ width: "27%" }}>
+        <FormControl sx={{ width: "27%" }}>
           <InputLabel id="gender-label" required>
             Gender
           </InputLabel>
@@ -63,29 +58,22 @@ export default function PersonalDetails() {
             id="gender"
             defaultValue=""
             label="Gender"
-            sx={{ width: "70%" }}
+            sx={{ width: "100%" }}
           >
-            <MenuItem>Male</MenuItem>
-            <MenuItem>Female</MenuItem>
-            <MenuItem>Rather not say</MenuItem>
+            <MenuItem value="male">Male</MenuItem>
+            <MenuItem value="female">Female</MenuItem>
+            <MenuItem value="other">Rather not say</MenuItem>
           </Select>
-        </Box>
+        </FormControl>
       </FormControl>
 
       <TextField
+        margin="normal"
         fullWidth
         label="Passport Number"
         placeholder="For the safety of Hanoikids members"
-        InputProps={{
-          readOnly: true,
-          endAdornment: (
-            <InputAdornment position="end">
-              <IconButton color="primary">
-                <Visibility />
-              </IconButton>
-            </InputAdornment>
-          ),
-        }}
+        type="password"
+        required
       />
     </Box>
   );

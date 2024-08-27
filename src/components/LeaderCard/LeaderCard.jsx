@@ -14,9 +14,14 @@ export default function LeaderCard({
 }) {
   return (
     <Box className="contact-container">
-      <Typography variant="body1" gutterBottom component={"span"}>
-        {`${category}: ${description}`}
-      </Typography>
+      <Box sx={{ marginTop: 4 }}>
+        <Typography sx={{ fontWeight: "bold" }} gutterBottom component={"span"}>
+          {category}
+        </Typography>
+        <Typography gutterBottom component={"span"}>
+          {description}
+        </Typography>
+      </Box>
 
       <Grid container spacing={2} className="contact-box">
         <Grid item xs={4} order={reverse ? 1 : 2}>

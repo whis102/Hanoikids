@@ -1,16 +1,7 @@
-import {
-  Box,
-  Card,
-  CardContent,
-  CardMedia,
-  Container,
-  Grid,
-  Typography,
-} from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import "./About.scss";
 import Layout from "../../components/Layout/Layout";
 import Title from "../../components/Title/Title";
-import History from "../../components/History/History";
 
 export default function About() {
   return (
@@ -26,7 +17,6 @@ export default function About() {
           the rest of the world. Each member of the club can explore their full
           potentialthrough practical experiences and extracurricular activities.
         </Typography>
-        <History />
       </Container>
     </Layout>
   );
