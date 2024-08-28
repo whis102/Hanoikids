@@ -97,7 +97,7 @@ export default function BookingProcess() {
               <FormControl onSubmit={handleSubmit}>
                 <Button
                   variant="contained"
-                  type="submit" // Add type="submit" for form submission
+                  type="submit"
                   className="btn-submit"
                   size="large"
                 >
