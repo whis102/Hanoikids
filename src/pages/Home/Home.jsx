@@ -1,4 +1,3 @@
-import "./Home.scss";
 import Title from "../../components/Title/Title";
 import Carousel from "../../components/Carousel/Carousel";
 import Layout from "../../components/Layout/Layout";
@@ -10,9 +9,9 @@ export default function Home() {
   return (
     <Layout>
       <Carousel />
-      <Container className="about-section">
+      <Container>
         <Title heading={"h4"}>About Us</Title>
-        <Typography gutterBottom>
+        <Typography gutterBottom sx={{ textAlign: "center" }}>
           Hanoikids is a vibrant student-led initiative offering complimentary
           walking tours of Hanoi. Our passionate guides, deeply connected to the
           city, are committed to sharing authentic local experiences. From

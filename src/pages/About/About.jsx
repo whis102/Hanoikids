@@ -2,6 +2,8 @@ import { Container, Typography } from "@mui/material";
 import "./About.scss";
 import Layout from "../../components/Layout/Layout";
 import Title from "../../components/Title/Title";
+import Parallax from "../../components/Parallax/Parallax";
+import StatsSection from "../../components/StatsSection/StatsSection";
 
 export default function About() {
   return (
@@ -17,6 +19,8 @@ export default function About() {
           the rest of the world. Each member of the club can explore their full
           potentialthrough practical experiences and extracurricular activities.
         </Typography>
+        <StatsSection />
+        <Parallax />
       </Container>
     </Layout>
   );

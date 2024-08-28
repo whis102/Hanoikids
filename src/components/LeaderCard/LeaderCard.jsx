@@ -1,4 +1,3 @@
-// LeaderCard.jsx
 import "./LeaderCard.scss";
 import { Box, Card, CardMedia, Grid, Typography } from "@mui/material";
 import Title from "../../components/Title/Title";
