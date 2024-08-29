@@ -1,4 +1,5 @@
 import ThangLongCitadel from "../assets/imperial-citadel-of-thang-long.webp";
+import FlagPole from "../assets/hanoi-flag-pole.webp";
 
 const slides = [
   {
@@ -12,7 +13,7 @@ const slides = [
   },
 
   {
-    src: "https://cdn.hanoijourney.com/wp-content/uploads/2018/03/Ha-Noi-Flag-Pole-%E2%80%93-Fortress-Stands-Firmly-Over-Time.jpg",
+    src: FlagPole,
     alt: "Hanoi Old Flag Tower",
   },
 ];

@@ -11,7 +11,7 @@ export default function Parallax() {
 
     window.addEventListener("scroll", () => {
       const scrollY = window.scrollY;
-      const translateY = (scrollY - initialY) * 0.2; // Tùy chỉnh hệ số 0.2
+      const translateY = (scrollY - initialY) * 0.2;
       parallaxElement.style.transform = `translateY(${translateY}px)`;
     });
   }, []);

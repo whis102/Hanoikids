@@ -8,18 +8,32 @@ import {
   Typography,
   Container,
   Modal,
-  FormControl,
 } from "@mui/material";
 import { useState } from "react";
 import Title from "../Title/Title";
 import BookingForm from "../BookingForm/BookingForm";
 import PersonalDetails from "../PersonalDetails/PersonalDetails";
+import Checkout from "../Checkout/Checkout";
 
 const steps = ["Booking details", "Personal details", "Checkout"];
 
 export default function BookingProcess() {
   const [activeStep, setActiveStep] = useState(0);
   const [open, setOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    hotelName: "",
+    hotelAddress: "",
+    tourOption: "",
+    date: "",
+    startingTime: "",
+    participants: 1,
+    fullName: "",
+    email: "",
+    dob: "",
+    gender: "",
+    passportNumber: "",
+  });
+
   const handleClose = () => setOpen(false);
 
   const handleNext = () => {
@@ -33,24 +47,27 @@ export default function BookingProcess() {
   const handleReset = () => {
     setActiveStep(0);
   };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     setOpen(true);
   };
 
+  const updateFormData = (data) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      ...data,
+    }));
+  };
+
   return (
     <Container>
       <Stepper activeStep={activeStep} sx={{ mt: 5, marginX: 10 }}>
-        {steps.map((label, index) => {
-          const stepProps = {};
-          const labelProps = {};
-
-          return (
-            <Step key={index} {...stepProps} className="step-box">
-              <StepLabel {...labelProps}>{label}</StepLabel>
-            </Step>
-          );
-        })}
+        {steps.map((label, index) => (
+          <Step key={index}>
+            <StepLabel>{label}</StepLabel>
+          </Step>
+        ))}
       </Stepper>
       {activeStep === steps.length ? (
         <Modal
@@ -75,10 +92,15 @@ export default function BookingProcess() {
             component={"p"}
             sx={{ textAlign: "center", fontStyle: "italic" }}
           >
-            All this field are required
+            All fields are required
           </Typography>
-          {activeStep === 0 && <BookingForm />}
-          {activeStep === 1 && <PersonalDetails />}
+          {activeStep === 0 && (
+            <BookingForm formData={formData} setFormData={updateFormData} />
+          )}
+          {activeStep === 1 && (
+            <PersonalDetails formData={formData} setFormData={updateFormData} />
+          )}
+          {activeStep === 2 && <Checkout formData={formData} />}
 
           <Box className="btn-box">
             {activeStep > 0 && (
@@ -92,18 +114,15 @@ export default function BookingProcess() {
                 Back
               </Button>
             )}
-
             {activeStep === steps.length - 1 ? (
-              <FormControl onSubmit={handleSubmit}>
-                <Button
-                  variant="contained"
-                  type="submit"
-                  className="btn-submit"
-                  size="large"
-                >
-                  Submit
-                </Button>
-              </FormControl>
+              <Button
+                variant="contained"
+                onClick={handleSubmit}
+                className="btn-submit"
+                size="large"
+              >
+                Submit
+              </Button>
             ) : (
               <Button
                 variant="contained"

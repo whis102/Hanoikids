@@ -1,5 +1,5 @@
-import Nhoc from "../assets/nhoc-ct.jpg";
-import Vie from "../assets/vie-pct.jpg";
+import Nhoc from "../assets/nhoc-ct.webp";
+import Vie from "../assets/vie-pct.webp";
 
 const leaders = [
   {

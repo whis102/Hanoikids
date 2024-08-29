@@ -15,14 +15,14 @@ import {
 import { Add, Remove } from "@mui/icons-material";
 import { TOUR_OPTIONS, STARTING_TIMES } from "../../data/booking";
 
-export default function BookingForm() {
+export default function BookingForm({ formData, setFormData }) {
   const formik = useFormik({
     initialValues: {
-      hotelName: "",
-      hotelAddress: "",
-      tourOption: "",
-      date: "",
-      startingTime: "",
+      hotelName: formData.hotelName,
+      hotelAddress: formData.hotelAddress,
+      tourOption: formData.tourOption,
+      date: formData.date,
+      startingTime: formData.startingTime,
     },
     validationSchema: Yup.object({
       hotelName: Yup.string().required("Hotel name is required"),
@@ -31,16 +31,21 @@ export default function BookingForm() {
       date: Yup.date().required("Date is required"),
       startingTime: Yup.string().required("Please select a starting time"),
     }),
+    onSubmit: (values) => {
+      setFormData(values);
+    },
   });
 
-  const [participants, setParticipants] = useState(1);
+  const [participants, setParticipants] = useState(formData.participants);
 
   const handleAddParticipant = () => {
     setParticipants((prev) => prev + 1);
+    setFormData({ participants: participants + 1 });
   };
 
   const handleRemoveParticipant = () => {
     setParticipants((prev) => Math.max(1, prev - 1));
+    setFormData({ participants: Math.max(1, participants - 1) });
   };
 
   return (

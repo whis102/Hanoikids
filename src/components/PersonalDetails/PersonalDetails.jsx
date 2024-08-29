@@ -8,7 +8,11 @@ import {
   FormControl,
 } from "@mui/material";
 
-export default function PersonalDetails() {
+export default function PersonalDetails({ formData, setFormData }) {
+  const handleChange = (field, value) => {
+    setFormData({ [field]: value });
+  };
+
   return (
     <Box className="booking-box">
       <TextField
@@ -18,6 +22,8 @@ export default function PersonalDetails() {
         placeholder="Your full name"
         type="text"
         required
+        value={formData.fullName}
+        onChange={(e) => handleChange("fullName", e.target.value)}
       />
 
       <TextField
@@ -27,6 +33,8 @@ export default function PersonalDetails() {
         placeholder="example@gmail.com"
         type="email"
         required
+        value={formData.email}
+        onChange={(e) => handleChange("email", e.target.value)}
       />
 
       <FormControl
