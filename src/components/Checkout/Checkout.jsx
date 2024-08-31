@@ -1,44 +1,54 @@
 import "./Checkout.scss";
+import { Box, Paper, Typography, Link } from "@mui/material";
 
 export default function Checkout({ formData }) {
-  return (
-    <div className="checkout-details">
-      <h2>Booking Details</h2>
-      <p>
-        <strong>Hotel Name:</strong> {formData.hotelName}
-      </p>
-      <p>
-        <strong>Hotel Address:</strong> {formData.hotelAddress}
-      </p>
-      <p>
-        <strong>Tour Option:</strong> {formData.tourOption}
-      </p>
-      <p>
-        <strong>Date:</strong> {formData.date}
-      </p>
-      <p>
-        <strong>Starting Time:</strong> {formData.startingTime}
-      </p>
-      <p>
-        <strong>Participants:</strong> {formData.participants}
-      </p>
+  const bookingDetails = [
+    { label: "Tour Package:", value: formData.tourPackage || "City Tour" },
+    { label: "Tour Option:", value: formData.tourOption || "Hoa Lo Prison" },
+    { label: "Date (dd/mm/yyyy):", value: formData.date || "12/08/2024" },
+    { label: "Time:", value: formData.startingTime || "14:00 Vietnam GMT +7" },
+    { label: "Participants:", value: formData.participants || "01" },
+    { label: "Special Request:", value: formData.specialRequest || "none" },
+  ];
 
-      <h2>Personal Details</h2>
-      <p>
-        <strong>Full Name:</strong> {formData.fullName}
-      </p>
-      <p>
-        <strong>Email:</strong> {formData.email}
-      </p>
-      <p>
-        <strong>Date of Birth:</strong> {formData.dob}
-      </p>
-      <p>
-        <strong>Gender:</strong> {formData.gender}
-      </p>
-      <p>
-        <strong>Passport Number:</strong> {formData.passportNumber}
-      </p>
-    </div>
+  const personalDetails = [
+    { label: "Full Name:", value: formData.fullName || "A" },
+    { label: "Gender:", value: formData.gender || "Male" },
+    { label: "DoB (dd/mm/yyyy):", value: formData.dob || "16/08/2024" },
+    { label: "Nationality:", value: formData.nationality || "Afganistan" },
+    { label: "Passport Number:", value: formData.passportNumber || "Asdasdas" },
+    { label: "Email:", value: formData.email || "Asdasd@Gmail.Com" },
+  ];
+
+  const renderDetailRows = (details) =>
+    details.map((detail, index) => (
+      <Box className="detail-row" key={index}>
+        <Typography component={"span"}>{detail.label}</Typography>
+        <Typography component={"span"}>{detail.value}</Typography>
+      </Box>
+    ));
+
+  return (
+    <Box component={"form"} className="checkout-container">
+      <Paper elevation={1} className="booking-box">
+        <Box className="header">
+          <Typography component={"h5"}>Booking Details</Typography>
+          <Link href="#" underline="hover">
+            Edit
+          </Link>
+        </Box>
+        {renderDetailRows(bookingDetails)}
+      </Paper>
+
+      <Paper elevation={1} className="booking-box">
+        <Box className="header">
+          <Typography component={"h5"}>Personal Details</Typography>
+          <Link href="#" underline="hover">
+            Edit
+          </Link>
+        </Box>
+        {renderDetailRows(personalDetails)}
+      </Paper>
+    </Box>
   );
 }

@@ -6,83 +6,99 @@ import {
   Select,
   InputLabel,
   FormControl,
+  Stack,
 } from "@mui/material";
+import countryList from "react-select-country-list";
 
 export default function PersonalDetails({ formData, setFormData }) {
   const handleChange = (field, value) => {
-    setFormData({ [field]: value });
+    setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
+  const options = countryList().getData();
+
   return (
-    <Box className="booking-box">
-      <TextField
-        fullWidth
-        margin="normal"
-        label="Full Name"
-        placeholder="Your full name"
-        type="text"
-        required
-        value={formData.fullName}
-        onChange={(e) => handleChange("fullName", e.target.value)}
-      />
-
-      <TextField
-        fullWidth
-        margin="normal"
-        label="Email"
-        placeholder="example@gmail.com"
-        type="email"
-        required
-        value={formData.email}
-        onChange={(e) => handleChange("email", e.target.value)}
-      />
-
-      <FormControl
-        fullWidth
-        margin="normal"
-        sx={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
+    <Box className="booking-box" component="form">
+      <Stack spacing={2}>
         <TextField
-          sx={{ width: "70%" }}
-          label="Date"
-          type="date"
-          InputLabelProps={{
-            shrink: true,
-          }}
+          fullWidth
+          label="Full Name"
+          placeholder="Your full name"
+          type="text"
           required
+          value={formData.fullName}
+          onChange={(e) => handleChange("fullName", e.target.value)}
         />
 
-        <FormControl sx={{ width: "27%" }}>
-          <InputLabel id="gender-label" required>
-            Gender
+        <TextField
+          fullWidth
+          label="Email"
+          placeholder="example@gmail.com"
+          type="email"
+          required
+          value={formData.email}
+          onChange={(e) => handleChange("email", e.target.value)}
+        />
+
+        <Stack direction="row" spacing={2} alignItems="center">
+          <TextField
+            sx={{ flex: 1 }}
+            label="Date"
+            type="date"
+            InputLabelProps={{
+              shrink: true,
+            }}
+            required
+            onChange={(e) => handleChange("date", e.target.value)}
+          />
+
+          <FormControl sx={{ flex: 1 }}>
+            <InputLabel id="gender-label" required>
+              Gender
+            </InputLabel>
+            <Select
+              labelId="gender-label"
+              id="gender"
+              value={formData.gender}
+              onChange={(e) => handleChange("gender", e.target.value)}
+              label="Gender"
+            >
+              <MenuItem value="male">Male</MenuItem>
+              <MenuItem value="female">Female</MenuItem>
+              <MenuItem value="other">Rather not say</MenuItem>
+            </Select>
+          </FormControl>
+        </Stack>
+
+        <FormControl fullWidth>
+          <InputLabel id="nationality-label" required>
+            Nationality
           </InputLabel>
           <Select
-            labelId="gender-label"
-            id="gender"
-            defaultValue=""
-            label="Gender"
-            sx={{ width: "100%" }}
+            labelId="nationality-label"
+            value={formData.nationality}
+            onChange={(e) => handleChange("nationality", e.target.value)}
+            label="Nationality"
+            id="nationality"
           >
-            <MenuItem value="male">Male</MenuItem>
-            <MenuItem value="female">Female</MenuItem>
-            <MenuItem value="other">Rather not say</MenuItem>
+            {options.map((option) => (
+              <MenuItem key={option.value} value={option.label}>
+                {option.label}
+              </MenuItem>
+            ))}
           </Select>
         </FormControl>
-      </FormControl>
 
-      <TextField
-        margin="normal"
-        fullWidth
-        label="Passport Number"
-        placeholder="For the safety of Hanoikids members"
-        type="password"
-        required
-      />
+        <TextField
+          fullWidth
+          label="Passport Number"
+          placeholder="For the safety of Hanoikids members"
+          type="password"
+          required
+          value={formData.passport}
+          onChange={(e) => handleChange("passport", e.target.value)}
+        />
+      </Stack>
     </Box>
   );
 }

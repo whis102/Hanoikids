@@ -1,0 +1,58 @@
+@import "../../styles.scss";
+
+.checkout-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+
+  .booking-box {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+
+    p {
+      margin: 10px 0;
+      color: #333;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+
+      h5 {
+        color: $primary-color;
+        font-weight: bold;
+      }
+
+      a {
+        color: #0073e6;
+        cursor: pointer;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 0;
+
+      span {
+        color: #333;
+      }
+
+      &:not(:last-child) {
+        border-bottom: 1px solid #ddd;
+      }
+    }
+  }
+}
