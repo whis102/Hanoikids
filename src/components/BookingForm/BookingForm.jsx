@@ -18,11 +18,12 @@ import { TOUR_OPTIONS, STARTING_TIMES } from "../../data/booking";
 export default function BookingForm({ formData, setFormData }) {
   const formik = useFormik({
     initialValues: {
-      hotelName: formData.hotelName,
-      hotelAddress: formData.hotelAddress,
-      tourOption: formData.tourOption,
-      date: formData.date,
-      startingTime: formData.startingTime,
+      hotelName: formData.hotelName || "",
+      hotelAddress: formData.hotelAddress || "",
+      tourOption: formData.tourOption || "",
+      date: formData.date || "",
+      startingTime: formData.startingTime || "",
+      specialRequest: formData.specialRequest || "",
     },
 
     // required field
@@ -34,7 +35,7 @@ export default function BookingForm({ formData, setFormData }) {
       startingTime: Yup.string().required("Please select a starting time"),
     }),
     onSubmit: (values) => {
-      setFormData(values);
+      setFormData((prev) => ({ ...prev, ...values }));
     },
   });
 

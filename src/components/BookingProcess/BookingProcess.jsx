@@ -51,6 +51,9 @@ export default function BookingProcess() {
   const handleSubmit = (event) => {
     event.preventDefault();
     setOpen(true);
+    setTimeout(() => {
+      handleClose();
+    }, 2500);
   };
 
   const updateFormData = (data) => {
@@ -69,73 +72,73 @@ export default function BookingProcess() {
           </Step>
         ))}
       </Stepper>
-      {activeStep === steps.length ? (
-        <Modal
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-        >
-          <Typography sx={{ mt: 2, mb: 1 }}>
-            All steps completed - you&apos;re finished
+      <Title heading={"h4"}>{steps[activeStep]}</Title>
+      <Typography
+        component={"p"}
+        sx={{ textAlign: "center", fontStyle: "italic" }}
+      >
+        All fields are required
+      </Typography>
+      {activeStep === 0 && (
+        <BookingForm formData={formData} setFormData={updateFormData} />
+      )}
+      {activeStep === 1 && (
+        <PersonalDetails formData={formData} setFormData={updateFormData} />
+      )}
+      {activeStep === 2 && <Checkout formData={formData} />}
+      <Box className="btn-box">
+        {activeStep > 0 && (
+          <Button
+            variant="outlined"
+            color="inherit"
+            onClick={handleBack}
+            sx={{ mr: 1 }}
+            size="large"
+          >
+            Back
+          </Button>
+        )}
+        {activeStep === steps.length - 1 ? (
+          <Button
+            variant="contained"
+            onClick={handleSubmit}
+            className="btn-submit"
+            size="large"
+          >
+            Submit
+          </Button>
+        ) : (
+          <Button
+            variant="contained"
+            onClick={handleNext}
+            className="btn-submit"
+            size="large"
+          >
+            Continue
+          </Button>
+        )}
+      </Box>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box className={"modal-box"}>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            All steps completed - you're finished
           </Typography>
-          <Box className="btn-box">
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            Thank you for your booking!
+          </Typography>
+          <Box className="btn-box" sx={{ mt: 2 }}>
             <Button variant="contained" onClick={handleReset}>
               Book Other Tour
             </Button>
           </Box>
-        </Modal>
-      ) : (
-        <>
-          <Title heading={"h4"}>{steps[activeStep]}</Title>
-          <Typography
-            component={"p"}
-            sx={{ textAlign: "center", fontStyle: "italic" }}
-          >
-            All fields are required
-          </Typography>
-          {activeStep === 0 && (
-            <BookingForm formData={formData} setFormData={updateFormData} />
-          )}
-          {activeStep === 1 && (
-            <PersonalDetails formData={formData} setFormData={updateFormData} />
-          )}
-          {activeStep === 2 && <Checkout formData={formData} />}
-
-          <Box className="btn-box">
-            {activeStep > 0 && (
-              <Button
-                variant="outlined"
-                color="inherit"
-                onClick={handleBack}
-                sx={{ mr: 1 }}
-                size="large"
-              >
-                Back
-              </Button>
-            )}
-            {activeStep === steps.length - 1 ? (
-              <Button
-                variant="contained"
-                onClick={handleSubmit}
-                className="btn-submit"
-                size="large"
-              >
-                Submit
-              </Button>
-            ) : (
-              <Button
-                variant="contained"
-                onClick={handleNext}
-                className="btn-submit"
-                size="large"
-              >
-                Continue
-              </Button>
-            )}
-          </Box>
-        </>
-      )}
+        </Box>
+      </Modal>
+      ;
     </Container>
   );
 }

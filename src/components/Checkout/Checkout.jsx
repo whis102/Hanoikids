@@ -3,22 +3,22 @@ import { Box, Paper, Typography, Link } from "@mui/material";
 
 export default function Checkout({ formData }) {
   const bookingDetails = [
-    { label: "Hotel Name:", value: formData.hotelName },
-    { label: "Hotel Address:", value: formData.hotelAddress },
-    { label: "Tour Option:", value: formData.tourOption },
-    { label: "Date (dd/mm/yyyy):", value: formData.date },
-    { label: "Time:", value: formData.startingTime },
-    { label: "Participants:", value: formData.participants },
+    { label: "Hotel Name:", value: formData.hotelName || "N/A" },
+    { label: "Hotel Address:", value: formData.hotelAddress || "N/A" },
+    { label: "Tour Option:", value: formData.tourOption || "N/A" },
+    { label: "Date (dd/mm/yyyy):", value: formData.date || "N/A" },
+    { label: "Time:", value: formData.startingTime || "N/A" },
+    { label: "Participants:", value: formData.participants || "N/A" },
     { label: "Special Request:", value: formData.specialRequest || "none" },
   ];
 
   const personalDetails = [
-    { label: "Full Name:", value: formData.fullName },
-    { label: "Gender:", value: formData.gender },
-    { label: "DoB (dd/mm/yyyy):", value: formData.dob },
-    { label: "Nationality:", value: formData.nationality },
-    { label: "Passport Number:", value: formData.passportNumber },
-    { label: "Email:", value: formData.email },
+    { label: "Full Name:", value: formData.fullName || "N/A" },
+    { label: "Gender:", value: formData.gender || "N/A" },
+    { label: "DoB (dd/mm/yyyy):", value: formData.dob || "N/A" },
+    { label: "Nationality:", value: formData.nationality || "N/A" },
+    { label: "Passport Number:", value: formData.passport || "N/A" },
+    { label: "Email:", value: formData.email || "N/A" },
   ];
 
   const renderDetailRows = (details) =>

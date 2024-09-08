@@ -26,7 +26,7 @@ export default function PersonalDetails({ formData, setFormData }) {
           placeholder="Your full name"
           type="text"
           required
-          value={formData.fullName}
+          value={formData.fullName || ""}
           onChange={(e) => handleChange("fullName", e.target.value)}
         />
 
@@ -36,20 +36,21 @@ export default function PersonalDetails({ formData, setFormData }) {
           placeholder="example@gmail.com"
           type="email"
           required
-          value={formData.email}
+          value={formData.email || ""}
           onChange={(e) => handleChange("email", e.target.value)}
         />
 
         <Stack direction="row" spacing={2} alignItems="center">
           <TextField
             sx={{ flex: 1 }}
-            label="Date"
+            label="Date of Birth"
             type="date"
             InputLabelProps={{
               shrink: true,
             }}
             required
-            onChange={(e) => handleChange("date", e.target.value)}
+            value={formData.dob || ""}
+            onChange={(e) => handleChange("dob", e.target.value)}
           />
 
           <FormControl sx={{ flex: 1 }}>
@@ -59,7 +60,7 @@ export default function PersonalDetails({ formData, setFormData }) {
             <Select
               labelId="gender-label"
               id="gender"
-              value={formData.gender}
+              value={formData.gender || ""}
               onChange={(e) => handleChange("gender", e.target.value)}
               label="Gender"
             >
@@ -82,7 +83,8 @@ export default function PersonalDetails({ formData, setFormData }) {
             id="nationality"
           >
             {options.map((option) => (
-              <MenuItem key={option.value} value={option.label}>
+              <MenuItem key={option.value} value={option.value}>
+                {" "}
                 {option.label}
               </MenuItem>
             ))}
