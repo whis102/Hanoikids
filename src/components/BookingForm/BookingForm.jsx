@@ -24,6 +24,8 @@ export default function BookingForm({ formData, setFormData }) {
       date: formData.date,
       startingTime: formData.startingTime,
     },
+
+    // required field
     validationSchema: Yup.object({
       hotelName: Yup.string().required("Hotel name is required"),
       hotelAddress: Yup.string().required("Hotel address is required"),
