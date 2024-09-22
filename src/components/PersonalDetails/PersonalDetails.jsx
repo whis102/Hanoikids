@@ -8,6 +8,8 @@ import {
   FormControl,
   Stack,
 } from "@mui/material";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
 import countryList from "react-select-country-list";
 
 export default function PersonalDetails({ formData, setFormData }) {
@@ -16,6 +18,16 @@ export default function PersonalDetails({ formData, setFormData }) {
   };
 
   const options = countryList().getData();
+  const validationSchema = Yup.object({
+    firstName: Yup.string().required("First name is required"),
+    lastName: Yup.string().required("Last name is required"),
+    email: Yup.string()
+      .email("Invalid email format")
+      .required("Email is required"),
+    phone: Yup.string()
+      .matches(/^[0-9]+$/, "Phone number is not valid")
+      .required("Phone number is required"),
+  });
 
   return (
     <Box className="booking-box" component="form">
@@ -99,6 +111,22 @@ export default function PersonalDetails({ formData, setFormData }) {
           required
           value={formData.passport}
           onChange={(e) => handleChange("passport", e.target.value)}
+        />
+
+        <TextField
+          fullWidth
+          margin="normal"
+          label="Hotel Name"
+          placeholder="Your hotel name use for pickup purpose"
+          required
+        />
+
+        <TextField
+          fullWidth
+          margin="normal"
+          label="Hotel Address"
+          placeholder="Your hotel address use for pickup purpose"
+          required
         />
       </Stack>
     </Box>

@@ -9,7 +9,7 @@ import {
   Container,
   Modal,
 } from "@mui/material";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Title from "../Title/Title";
 import BookingForm from "../BookingForm/BookingForm";
 import PersonalDetails from "../PersonalDetails/PersonalDetails";
@@ -34,9 +34,17 @@ export default function BookingProcess() {
     passportNumber: "",
   });
 
+  const formRef = useRef(null);
+
   const handleClose = () => setOpen(false);
 
   const handleNext = () => {
+    if (activeStep === 0 && formRef.current) {
+      const isValid = formRef.current.validateForm();
+      if (!isValid) {
+        return;
+      }
+    }
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
 
@@ -80,7 +88,11 @@ export default function BookingProcess() {
         All fields are required
       </Typography>
       {activeStep === 0 && (
-        <BookingForm formData={formData} setFormData={updateFormData} />
+        <BookingForm
+          formData={formData}
+          setFormData={updateFormData}
+          ref={formRef}
+        />
       )}
       {activeStep === 1 && (
         <PersonalDetails formData={formData} setFormData={updateFormData} />

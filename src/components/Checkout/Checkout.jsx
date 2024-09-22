@@ -3,8 +3,6 @@ import { Box, Paper, Typography, Link } from "@mui/material";
 
 export default function Checkout({ formData }) {
   const bookingDetails = [
-    { label: "Hotel Name:", value: formData.hotelName || "N/A" },
-    { label: "Hotel Address:", value: formData.hotelAddress || "N/A" },
     { label: "Tour Option:", value: formData.tourOption || "N/A" },
     { label: "Date (dd/mm/yyyy):", value: formData.date || "N/A" },
     { label: "Time:", value: formData.startingTime || "N/A" },
@@ -19,6 +17,8 @@ export default function Checkout({ formData }) {
     { label: "Nationality:", value: formData.nationality || "N/A" },
     { label: "Passport Number:", value: formData.passport || "N/A" },
     { label: "Email:", value: formData.email || "N/A" },
+    { label: "Hotel Name:", value: formData.hotelName || "N/A" },
+    { label: "Hotel Address:", value: formData.hotelAddress || "N/A" },
   ];
 
   const renderDetailRows = (details) =>

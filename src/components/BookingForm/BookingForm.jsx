@@ -1,5 +1,5 @@
 import "./BookingForm.scss";
-import { useState } from "react";
+import { useState, forwardRef, useImperativeHandle } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import {
@@ -15,21 +15,15 @@ import {
 import { Add, Remove } from "@mui/icons-material";
 import { TOUR_OPTIONS, STARTING_TIMES } from "../../data/booking";
 
-export default function BookingForm({ formData, setFormData }) {
+const BookingForm = forwardRef(({ formData, setFormData }, ref) => {
   const formik = useFormik({
     initialValues: {
-      hotelName: formData.hotelName || "",
-      hotelAddress: formData.hotelAddress || "",
       tourOption: formData.tourOption || "",
       date: formData.date || "",
       startingTime: formData.startingTime || "",
       specialRequest: formData.specialRequest || "",
     },
-
-    // required field
     validationSchema: Yup.object({
-      hotelName: Yup.string().required("Hotel name is required"),
-      hotelAddress: Yup.string().required("Hotel address is required"),
       tourOption: Yup.string().required("Please select a tour option"),
       date: Yup.date().required("Date is required"),
       startingTime: Yup.string().required("Please select a starting time"),
@@ -51,34 +45,31 @@ export default function BookingForm({ formData, setFormData }) {
     setFormData({ participants: Math.max(1, participants - 1) });
   };
 
+  useImperativeHandle(ref, () => ({
+    validateForm: () => {
+      formik.validateForm();
+      if (
+        formik.errors.tourOption ||
+        formik.errors.date ||
+        formik.errors.startingTime
+      ) {
+        formik.setTouched({
+          tourOption: true,
+          date: true,
+          startingTime: true,
+        });
+        return false;
+      }
+      return true;
+    },
+  }));
+
   return (
     <Box
       component="form"
       onSubmit={formik.handleSubmit}
       className="booking-box"
     >
-      <TextField
-        fullWidth
-        margin="normal"
-        label="Hotel Name"
-        placeholder="Your hotel name use for pickup purpose"
-        {...formik.getFieldProps("hotelName")}
-        error={formik.touched.hotelName && Boolean(formik.errors.hotelName)}
-        helperText={formik.touched.hotelName && formik.errors.hotelName}
-      />
-
-      <TextField
-        fullWidth
-        margin="normal"
-        label="Hotel Address"
-        placeholder="Your hotel address use for pickup purpose"
-        {...formik.getFieldProps("hotelAddress")}
-        error={
-          formik.touched.hotelAddress && Boolean(formik.errors.hotelAddress)
-        }
-        helperText={formik.touched.hotelAddress && formik.errors.hotelAddress}
-      />
-
       <FormControl fullWidth margin="normal">
         <InputLabel id="tour-option-label" required>
           Tour option
@@ -170,8 +161,11 @@ export default function BookingForm({ formData, setFormData }) {
         fullWidth
         margin="normal"
         label="Special request"
-        placeholder="If you have any further expectations or notes, please do not hesitate to inform us."
+        rows={4}
+        {...formik.getFieldProps("specialRequest")}
       />
     </Box>
   );
-}
+});
+
+export default BookingForm;
